@@ -1,10 +1,16 @@
 {
   "files": {
-    "main.js": "/react-pixema-app/static/js/main.63a22253.js",
+    "main.js": "/react-pixema-app/static/js/main.91e45b78.js",
+    "static/media/authBackground.jpg": "/react-pixema-app/static/media/authBackground.1c307d0b55bb182bf805.jpg",
+    "static/media/Pixemalogo.svg": "/react-pixema-app/static/media/Pixemalogo.8479cf418db81b4ccbd2d64f9b11aa24.svg",
+    "static/media/SettingIcon.svg": "/react-pixema-app/static/media/SettingIcon.8567c82afb27b53aedced0ded6783e51.svg",
+    "static/media/FavoritesIcon.svg": "/react-pixema-app/static/media/FavoritesIcon.f49d69c83fce23a42f83eb29a68a21af.svg",
+    "static/media/HomeIcon.svg": "/react-pixema-app/static/media/HomeIcon.193eb6e29ad61230564007694d099c61.svg",
+    "static/media/TrendsIcon.svg": "/react-pixema-app/static/media/TrendsIcon.7b158cc965160b56f70458f05a32aae7.svg",
     "index.html": "/react-pixema-app/index.html",
-    "main.63a22253.js.map": "/react-pixema-app/static/js/main.63a22253.js.map"
+    "main.91e45b78.js.map": "/react-pixema-app/static/js/main.91e45b78.js.map"
   },
   "entrypoints": [
-    "static/js/main.63a22253.js"
+    "static/js/main.91e45b78.js"
   ]
 }
