@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import { Color } from ".";
+import { Color, typography } from ".";
 
 const Wrapper = styled.div`
   background: ${Color.DARK_THEME};
 `;
 
-export { Wrapper };
+const Text = styled.p`
+  ${typography.H1}
+`;
+
+export { Wrapper, Text };

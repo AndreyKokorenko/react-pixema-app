@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { Color } from "./colors";
 
 export const ressetCSS = css`
   @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap");
@@ -30,6 +31,7 @@ export const ressetCSS = css`
   }
   html,
   body {
+    background: ${Color.WHITE_THEME};
     font-family: "Exo 2", "Inter", sans-serif;
     height: 100%;
     width: 100%;
