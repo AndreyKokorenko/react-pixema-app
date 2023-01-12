@@ -3,7 +3,7 @@ export enum ROUTE {
   TRENDS = "trends",
   FAVORITES = "favorites",
   SETTINGS = "settings",
-  NOT_FOUDE = "*",
+  NOT_FOUND = "*",
   SIGN_IN = "sign-in",
   SIGN_UP = "sign-up",
   SEARCH = "search",
