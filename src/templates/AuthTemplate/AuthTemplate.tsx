@@ -1,8 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
-import { ROUTE } from "../../router";
-import { LogoIcon } from "../../assets";
-import { Container, StyledLink, Footer } from "./styles";
+import { ROUTE } from "router";
+import { LogoIcon } from "assets";
+import { Container, StyledLink, CopyRight } from "./styles";
 import { useTheme } from "hooks";
+import { Color } from "ui";
 
 export const AuthTemplate = () => {
   useTheme();
@@ -10,11 +11,11 @@ export const AuthTemplate = () => {
     <Container>
       <StyledLink>
         <Link to={ROUTE.HOME}>
-          <LogoIcon />
+          <LogoIcon fill={`${Color.WHITE}`} />
         </Link>
       </StyledLink>
       <Outlet />
-      <Footer>© All Rights Reserved</Footer>
+      <CopyRight>© All Rights Reserved</CopyRight>
     </Container>
   );
 };

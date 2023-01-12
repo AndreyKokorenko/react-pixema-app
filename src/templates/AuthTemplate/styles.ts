@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { Color, Media, typography } from "../../ui";
 import { authBackground } from "assets";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  height: 100vh;
   padding: 40px;
 
   background: black;
@@ -16,19 +16,9 @@ const Container = styled.div`
 
 const StyledLink = styled.div``;
 
-const Footer = styled.p`
-  ${typography.B1}
-  color: ${Color.WHITE};
-
-  ${Media.XS} {
-    padding-bottom: 48px;
-  }
-  ${Media.MD} {
-    padding-bottom: 56px;
-  }
-  ${Media.LG} {
-    padding-bottom: 64px;
-  }
+const CopyRight = styled.div`
+  text-align: center;
+  margin-top: 64px;
 `;
 
-export { Container, Footer, StyledLink };
+export { Container, StyledLink, CopyRight };
