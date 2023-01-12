@@ -5,6 +5,7 @@ import { BurgerIcon, Absolute, Wrapper, Backdround } from "./styles";
 
 export const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };

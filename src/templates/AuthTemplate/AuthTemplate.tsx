@@ -2,11 +2,9 @@ import { Link, Outlet } from "react-router-dom";
 import { ROUTE } from "router";
 import { LogoIcon } from "assets";
 import { Container, StyledLink, CopyRight } from "./styles";
-import { useTheme } from "hooks";
 import { Color } from "ui";
 
 export const AuthTemplate = () => {
-  useTheme();
   return (
     <Container>
       <StyledLink>

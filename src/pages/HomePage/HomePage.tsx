@@ -33,6 +33,7 @@ export const HomePage = () => {
       setCount((prevState) => prevState + 2);
       setFetching(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetching]);
 
   useEffect(() => {
