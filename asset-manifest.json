@@ -1,16 +1,23 @@
 {
   "files": {
-    "main.js": "/react-pixema-app/static/js/main.91e45b78.js",
+    "main.js": "/react-pixema-app/static/js/main.eaecc7ed.js",
     "static/media/authBackground.jpg": "/react-pixema-app/static/media/authBackground.1c307d0b55bb182bf805.jpg",
-    "static/media/Pixemalogo.svg": "/react-pixema-app/static/media/Pixemalogo.8479cf418db81b4ccbd2d64f9b11aa24.svg",
-    "static/media/SettingIcon.svg": "/react-pixema-app/static/media/SettingIcon.8567c82afb27b53aedced0ded6783e51.svg",
-    "static/media/FavoritesIcon.svg": "/react-pixema-app/static/media/FavoritesIcon.f49d69c83fce23a42f83eb29a68a21af.svg",
-    "static/media/HomeIcon.svg": "/react-pixema-app/static/media/HomeIcon.193eb6e29ad61230564007694d099c61.svg",
-    "static/media/TrendsIcon.svg": "/react-pixema-app/static/media/TrendsIcon.7b158cc965160b56f70458f05a32aae7.svg",
+    "static/media/emptyFavorites.svg": "/react-pixema-app/static/media/emptyFavorites.8fda07dcb1b4988a9818a18b200ee966.svg",
+    "static/media/pixemalogo.svg": "/react-pixema-app/static/media/pixemalogo.8479cf418db81b4ccbd2d64f9b11aa24.svg",
+    "static/media/setting.svg": "/react-pixema-app/static/media/setting.8567c82afb27b53aedced0ded6783e51.svg",
+    "static/media/imdbLogo.svg": "/react-pixema-app/static/media/imdbLogo.58444fd8d2f8f69876ca64b6261dde9a.svg",
     "index.html": "/react-pixema-app/index.html",
-    "main.91e45b78.js.map": "/react-pixema-app/static/js/main.91e45b78.js.map"
+    "static/media/favorites.svg": "/react-pixema-app/static/media/favorites.f49d69c83fce23a42f83eb29a68a21af.svg",
+    "static/media/home.svg": "/react-pixema-app/static/media/home.193eb6e29ad61230564007694d099c61.svg",
+    "static/media/bookmark.svg": "/react-pixema-app/static/media/bookmark.500fd0d28b79706224f91110a8b66284.svg",
+    "static/media/trends.svg": "/react-pixema-app/static/media/trends.7b158cc965160b56f70458f05a32aae7.svg",
+    "static/media/user.svg": "/react-pixema-app/static/media/user.a3867c46a05515d83bd9fe2a072c9723.svg",
+    "static/media/pencil.svg": "/react-pixema-app/static/media/pencil.372bf1c0dffabd88fa68e0c399f2ed7c.svg",
+    "static/media/share.svg": "/react-pixema-app/static/media/share.242b526d1cb1ef7d8221dbd0f66122b9.svg",
+    "static/media/delete.svg": "/react-pixema-app/static/media/delete.2b6143344da6e0aaab82faf876c17b38.svg",
+    "main.eaecc7ed.js.map": "/react-pixema-app/static/js/main.eaecc7ed.js.map"
   },
   "entrypoints": [
-    "static/js/main.91e45b78.js"
+    "static/js/main.eaecc7ed.js"
   ]
 }
