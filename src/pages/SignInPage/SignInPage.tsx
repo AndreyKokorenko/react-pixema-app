@@ -1,4 +1,4 @@
-import { SignInForm } from "componets"
+import { SignInForm } from "components";
 import { Container } from "./styles";
 
 export const SignInPage = () => {

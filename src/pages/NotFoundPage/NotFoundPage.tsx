@@ -1,8 +1,9 @@
+import { Wrapper, Title } from "./styles";
+
 export const NotFoundPage = () => {
   return (
-    <div>
-      NotFoundPage NotFoundPage NotFoundPage NotFoundPage NotFoundPage NotFoundPage NotFoundPage
-      NotFoundPage NotFoundPage NotFoundPage NotFoundPage NotFoundPage NotFoundPage NotFoundPage
-    </div>
+    <Wrapper>
+      <Title> Oooops! Page not found!</Title>
+    </Wrapper>
   );
 };

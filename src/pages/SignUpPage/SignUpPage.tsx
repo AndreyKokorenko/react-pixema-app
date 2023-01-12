@@ -1,4 +1,4 @@
-import { SignUpForm } from "componets";
+import { SignUpForm } from "components";
 import { Container } from "./styles";
 
 export const SignUpPage = () => {
