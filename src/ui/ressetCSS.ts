@@ -2,7 +2,8 @@ import { css } from "styled-components";
 import { Color } from "./colors";
 
 export const ressetCSS = css`
-  @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;900&display=swap");
+
   * {
     padding: 0;
     margin: 0;
@@ -31,8 +32,6 @@ export const ressetCSS = css`
   }
   html,
   body {
-    background: ${Color.WHITE_THEME};
-    font-family: "Exo 2", "Inter", sans-serif;
     height: 100%;
     width: 100%;
     font-size: 100%;
@@ -41,6 +40,9 @@ export const ressetCSS = css`
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    font-family: "Exo 2", sans-serif;
+    background-color: ${Color.BACKGROUND_PRIMARY};
+    color: ${Color.TEXT_PRIMARY};
   }
   input,
   button,
@@ -60,6 +62,9 @@ export const ressetCSS = css`
   button::-moz-focus-inner {
     padding: 0;
     border: 0;
+  }
+  a {
+    color: ${Color.SECONDARY};
   }
   a,
   a:visited {

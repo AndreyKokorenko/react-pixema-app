@@ -1,9 +1,7 @@
 import { Color } from "./colors";
 import { GlobalStyles } from "./globalStyles";
 import { ressetCSS } from "./ressetCSS";
-import { darkTheme, lightTheme } from "./theme";
-import { typography } from "./typography";
-import { Wrapper, Text } from "./styles";
+import { H1, H2, H3, H4, Subtitle, S5, S4 } from "./typography";
 import { breakpoint } from "./breakpoints";
 import { screen } from "./breakpoints";
 import { Media } from "./breakpoints";
@@ -12,11 +10,13 @@ export {
   Color,
   GlobalStyles,
   ressetCSS,
-  lightTheme,
-  darkTheme,
-  typography,
-  Wrapper,
-  Text,
+  H1,
+  H2,
+  H3,
+  H4,
+  S4,
+  S5,
+  Subtitle,
   breakpoint,
   screen,
   Media,

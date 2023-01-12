@@ -1,11 +1,12 @@
-import { css } from "styled-components";
-import { Color } from "./colors";
+import styled, { css } from "styled-components";
 import { Media } from "./breakpoints";
+import { Color } from "./colors";
 
-const H1 = css`
+export const H1 = styled.h1`
   font-weight: 600;
-  line-height: 1.5;
-  color: ${Color.DARK_THEME};
+  font-size: 40px;
+  line-height: 60px;
+  color: ${Color.GRAPHITE};
   ${Media.XS} {
     font-size: 28px;
   }
@@ -17,10 +18,11 @@ const H1 = css`
   }
 `;
 
-const H2 = css`
+export const H2 = styled.h2`
   font-weight: 600;
-  line-height: 1.5;
-  color: ${Color.DARK_THEME};
+  font-size: 24px;
+  line-height: 36px;
+  color: ${Color.GRAPHITE};
   ${Media.XS} {
     font-size: 20px;
   }
@@ -29,10 +31,11 @@ const H2 = css`
   }
 `;
 
-const H3 = css`
+export const H3 = styled.h3`
   font-weight: 600;
-  line-height: 1.6;
-  color: ${Color.SECONDARY};
+  font-size: 20px;
+  line-height: 32px;
+  color: ${Color.GRAPHITE};
   ${Media.XS} {
     font-size: 18px;
   }
@@ -41,54 +44,24 @@ const H3 = css`
   }
 `;
 
-const S1 = css`
+export const H4 = styled.h4`
   font-weight: 600;
   font-size: 18px;
-  line-height: 1.33;
-  color: ${Color.SECONDARY};
+  line-height: 24px;
+  color: ${Color.GRAPHITE};
 `;
-const S2 = css`
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.5;
-  color: ${Color.DARK_THEME};
-`;
-const S3 = css`
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  color: ${Color.WHITE};
-`;
-const S4 = css`
+
+export const S4 = css`
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
 `;
-const S5 = css`
+export const S5 = css`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
 `;
 
-const S6 = css`
-  font-weight: 500;
-  line-height: 1.43;
-
-  ${Media.XS} {
-    font-size: 14px;
-  }
-  ${Media.MD} {
-    font-size: 16px;
-  }
-
+export const Subtitle = styled.p`
   color: ${Color.SECONDARY};
 `;
-
-const B1 = css`
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  color: ${Color.DARK_THEME};
-`;
-
-export const typography = { H1, H2, H3, S1, S2, S3, S4, S5, S6, B1 };
