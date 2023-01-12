@@ -1,5 +1,6 @@
-import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import { store } from "./store";
-import { toggleTheme } from "./theme/themeSlice";
 
-export { useAppSelector, useAppDispatch, store, toggleTheme };
+export { store };
+export * from "./selectors";
+export * from "./hooks/hooks";
+export * from "./features";
