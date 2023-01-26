@@ -5,7 +5,7 @@ const InputStyled = styled.input`
   width: 100%;
   padding: 16px 20px;
 
-  background: ${Color.GRAPHITE};
+  background: ${Color.BACKGROUND_PRIMARY_DARK};
   border-radius: 10px;
   border: none;
   color: ${Color.WHITE};

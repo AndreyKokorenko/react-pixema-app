@@ -40,9 +40,10 @@ const validateRules = {
 export const SignUpForm = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [, setIsLoading] = useState(false);
+  const [isOpen, toggleModal] = useState(false);
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const [isOpen, toggleModal] = useState(false);
 
   const {
     handleSubmit,

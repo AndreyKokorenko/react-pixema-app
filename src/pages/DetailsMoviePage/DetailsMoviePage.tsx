@@ -9,6 +9,7 @@ import {
   useAppSelector,
   getFavorites,
   getDetailsMovie,
+  getUserInfo,
 } from "store";
 import { IMovieDetails, IMovieSearch } from "types";
 import { BookmarkIcon, ShareIcon, IMDbLogo } from "assets";
@@ -36,12 +37,14 @@ import {
   Text,
 } from "./styles";
 import { recommended } from "utils";
+import { motion } from "framer-motion";
 
 export const DetailsMoviePage = () => {
   const { imdbID = "" } = useParams();
   const dispatch = useAppDispatch();
-  const { isLoading, error, details } = useAppSelector(getDetailsMovie);
+  const { isLoading, isError, details } = useAppSelector(getDetailsMovie);
   const { favorites } = useAppSelector(getFavorites);
+  const { isAuth } = useAppSelector(getUserInfo);
 
   const {
     title,
@@ -81,11 +84,15 @@ export const DetailsMoviePage = () => {
   const isFavorites = favorites.find((newMovie) => newMovie.imdbID === imdbID);
 
   const handleDeleteFavorites = () => {
-    dispatch(removeFavorite(imdbID));
+    if (isAuth) {
+      dispatch(removeFavorite(imdbID));
+    }
   };
 
   const handleAddFavorites = () => {
-    dispatch(addToFavotires(movie));
+    if (isAuth) {
+      dispatch(addToFavotires(movie));
+    }
   };
 
   useEffect(() => {
@@ -102,8 +109,8 @@ export const DetailsMoviePage = () => {
     return <Loading />;
   }
 
-  if (error) {
-    return <Error>{error}</Error>;
+  if (isError) {
+    return <Error>{isError}</Error>;
   }
 
   return (
@@ -114,7 +121,9 @@ export const DetailsMoviePage = () => {
           <MovieButton>
             {isFavorites ? (
               <DisFavoritesButton onClick={() => handleDeleteFavorites()}>
-                <BookmarkIcon />
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                  <BookmarkIcon />
+                </motion.div>
               </DisFavoritesButton>
             ) : (
               <FavoritesButton onClick={handleAddFavorites}>

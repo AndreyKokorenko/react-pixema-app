@@ -7,13 +7,13 @@ import { IMovie } from "types";
 interface MoviesState {
   movies: { [title: string]: IMovie };
   isLoading: boolean;
-  error: null | string;
+  isError: null | string;
 }
 
 const initialState: MoviesState = {
   movies: {},
   isLoading: false,
-  error: null,
+  isError: null,
 };
 
 const fetchMovies = createAsyncThunk<IMovie, string, { rejectValue: string }>(
@@ -22,8 +22,8 @@ const fetchMovies = createAsyncThunk<IMovie, string, { rejectValue: string }>(
     try {
       const response = await movieAPI.getByTitle(title);
       return adaptedIMovie(response);
-    } catch (error) {
-      const axiosError = error as AxiosError;
+    } catch (isError) {
+      const axiosError = isError as AxiosError;
       return rejectWithValue(axiosError.message);
     }
   }
@@ -36,7 +36,7 @@ const moviesSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(fetchMovies.pending, (state) => {
       state.isLoading = true;
-      state.error = null;
+      state.isError = null;
     });
     builder.addCase(fetchMovies.fulfilled, (state, { payload, meta }) => {
       state.isLoading = false;
@@ -44,7 +44,7 @@ const moviesSlice = createSlice({
     });
     builder.addCase(fetchMovies.rejected, (state) => {
       state.isLoading = false;
-      state.error = "Error";
+      state.isError = "Error";
     });
   },
 });

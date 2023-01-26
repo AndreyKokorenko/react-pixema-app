@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, screen, H4 } from "ui";
 
@@ -22,9 +23,22 @@ const ErrorWrapper = styled.div`
   flex-grow: 2;
 
   width: calc(100vw - 500px);
+  padding: 0 0 0 275px;
+
+  ${screen.XL} {
+    padding: 0 0 0 260px;
+  }
+
+  ${screen.LG} {
+    padding: 0 0 0 260px;
+  }
 
   ${screen.MD} {
-    width: auto;
+    padding: 0 10px 0 10px;
+  }
+
+  ${screen.SM} {
+    padding: 0 0 0 0px;
   }
 `;
 
@@ -49,7 +63,7 @@ const MovieWrapper = styled.div`
   justify-content: space-around;
 `;
 
-const FilterButton = styled.button`
+const FilterButton = styled(motion.button)`
   position: fixed;
   top: 150px;
   right: 5px;
@@ -79,6 +93,7 @@ const FilterContainer = styled.div`
     box-shadow: none;
   }
 `;
+
 
 const Sticky = styled.div`
   position: fixed;

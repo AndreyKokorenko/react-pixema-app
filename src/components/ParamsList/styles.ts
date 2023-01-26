@@ -23,4 +23,6 @@ const ParamItem = styled.li`
   border-radius: 10px;
 `;
 
-export { Wrapper, ParamItem };
+const Text = styled.span``;
+
+export { Wrapper, ParamItem, Text };

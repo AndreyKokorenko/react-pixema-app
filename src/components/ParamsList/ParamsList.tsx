@@ -1,6 +1,6 @@
 import { DeleteIcon } from "assets";
 import { deleteFilter, FilterKeys, useAppDispatch, useAppSelector, getMoviesSearch } from "store";
-import { ParamItem, Wrapper } from "./styles";
+import { ParamItem, Wrapper, Text } from "./styles";
 
 export const ParamsList = () => {
   const { params } = useAppSelector(getMoviesSearch);
@@ -9,12 +9,15 @@ export const ParamsList = () => {
   const handleClick = (filter: FilterKeys) => {
     dispatch(deleteFilter(filter));
   };
+
   return (
     <Wrapper>
       {Object.entries(params.filters).map((filter) => {
         return (
           <ParamItem key={filter[0]}>
-            <span>{`${filter[0]}: ${filter[1]}`} </span>
+            <Text>
+              {filter[0]}: {filter[1]}
+            </Text>
             <DeleteIcon onClick={() => handleClick(filter[0] as FilterKeys)} />
           </ParamItem>
         );

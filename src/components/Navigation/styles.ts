@@ -9,8 +9,8 @@ const Container = styled.div`
 const Links = styled.nav`
   display: grid;
   flex: 1 0 auto;
-  grid-template-rows: repeat(4, 24px);
 
+  grid-template-rows: repeat(4, 24px);
   grid-row-gap: 40px;
   padding: 0 0 0 60px;
 `;
@@ -25,7 +25,7 @@ const CopyRight = styled.p`
   ${S5}
 
   padding: 200px 40px 0 0;
-
+  
   color: ${Color.LIGHT};
 `;
 

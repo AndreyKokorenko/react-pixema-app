@@ -4,10 +4,30 @@ import { IParams } from "store";
 
 class MovieAPI {
   private readonly BASE_URL = process.env.REACT_APP_MOVIE_BASE_URL as string;
+  private readonly API_KEY = process.env.REACT_APP_MOVIE_API_KEY as string;
 
   private readonly API = axios.create({
     baseURL: this.BASE_URL,
   });
+
+  private readonly words = [
+    "Batman",
+    "War",
+    "love",
+    "money",
+    "friends",
+    "Thor",
+    "avengers",
+    "women",
+    "star",
+    "man",
+  ];
+
+  private readonly getRandomWord = (words: string[]) => {
+    const random = (Math.random() * this.words.length) | 0;
+    const randomWord = words[random];
+    return randomWord;
+  };
 
   public async getByTitle(title: string): Promise<IMovieAPI> {
     const params = {
@@ -41,6 +61,17 @@ class MovieAPI {
 
     return data;
   }
+
+  public getTrends = async (year: string) => {
+    const params = {
+      s: this.getRandomWord(this.words),
+      y: year,
+    };
+
+    const { data } = await this.API.get<IMovieAPI>(this.API_KEY, { params });
+
+    return data;
+  };
 }
 
 export const movieAPI = new MovieAPI();

@@ -2,8 +2,6 @@ import { css } from "styled-components";
 import { Color } from "./colors";
 
 export const ressetCSS = css`
-  @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;900&display=swap");
-
   * {
     padding: 0;
     margin: 0;

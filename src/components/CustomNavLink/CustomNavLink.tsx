@@ -10,6 +10,7 @@ interface IProps {
 
 export const CustomNavLink = ({ children, to }: IProps) => {
   const match = useMatch(to);
+
   return (
     <StyledNavLink $isActive={match} to={to}>
       {children}

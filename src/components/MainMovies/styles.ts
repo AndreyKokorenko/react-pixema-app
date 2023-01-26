@@ -10,9 +10,8 @@ const MovieList = styled.ul`
   padding-bottom: 10px;
 
   ${screen.MD} {
-    width: 80vw;
+    width: 100vw;
   }
-
   ${screen.SM} {
     align-items: center;
     justify-content: center;

@@ -14,11 +14,11 @@ export const MainMovies = ({ movies }: IProps) => {
     <MovieList>
       {width && width > breakpoint.SM
         ? movies?.map((movie: IMovieSearch) => {
-          return <MovieTile key={movie.imdbID} {...movie} />;
-        })
+            return <MovieTile key={movie.imdbID} {...movie} />;
+          })
         : movies?.map((movie: IMovieSearch) => {
-          return <MovieTile key={movie.imdbID} {...movie} />;
-        })}
+            return <MovieTile key={movie.imdbID} {...movie} />;
+          })}
     </MovieList>
   );
 };

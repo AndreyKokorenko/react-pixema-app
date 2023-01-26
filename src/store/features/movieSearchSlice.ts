@@ -7,7 +7,7 @@ import { IMovie, IMovieSearch } from "types";
 interface MoviesState {
   moviesSearch: IMovie;
   isLoading: boolean;
-  error: null | string;
+  isError: null | string;
   params: IParams;
   movieArray: IMovieSearch[];
 }
@@ -35,7 +35,7 @@ const initialState: MoviesState = {
     totalResults: 0,
   },
   isLoading: false,
-  error: null,
+  isError: null,
   params: {
     title: "",
     page: 1,
@@ -87,7 +87,7 @@ const moviesSearchSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(fetchMoviesSearch.pending, (state) => {
       state.isLoading = true;
-      state.error = null;
+      state.isError = null;
     });
     builder.addCase(fetchMoviesSearch.fulfilled, (state, { payload, meta }) => {
       state.isLoading = false;
@@ -96,7 +96,7 @@ const moviesSearchSlice = createSlice({
     });
     builder.addCase(fetchMoviesSearch.rejected, (state) => {
       state.isLoading = false;
-      state.error = "Error";
+      state.isError = "Error";
     });
   },
 });

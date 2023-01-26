@@ -12,6 +12,18 @@ export const adaptedIMovie = (movieAPI: IMovieAPI): IMovie => {
   };
 };
 
+export const transformShortMovie = (search: IMovieSearchAPI[]): IMovieSearch[] => {
+  return search.map((movie: IMovieSearchAPI) => {
+    return {
+      poster: movie.Poster,
+      title: movie.Title,
+      type: movie.Type,
+      year: movie.Year,
+      imdbID: movie.imdbID,
+    };
+  });
+};
+
 export const adaptedIMovieSearch = ({
   Poster,
   Title,

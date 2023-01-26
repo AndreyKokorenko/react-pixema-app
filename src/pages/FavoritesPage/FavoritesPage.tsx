@@ -6,19 +6,20 @@ import { FavoritesStyled, FavoritesEmpty } from "./styles";
 export const FavoritesPage = () => {
   const { favorites } = useAppSelector(getFavorites);
 
-  if (favorites.length === 0) {
-    return (
-      <FavoritesEmpty>
-        <EmptyFavoritesIcon />
-      </FavoritesEmpty>
-    );
-  } else {
-    return (
-      <FavoritesStyled>
-        {favorites.map((movie) => {
-          return <MovieTile key={movie.imdbID} {...movie} />;
-        })}
-      </FavoritesStyled>
-    );
-  }
+  return (
+    <>
+      {favorites.length === 0 && (
+        <FavoritesEmpty>
+          <EmptyFavoritesIcon />
+        </FavoritesEmpty>
+      )}
+      {favorites && favorites.length > 0 && (
+        <FavoritesStyled>
+          {favorites.map((movie) => {
+            return <MovieTile key={movie.imdbID} {...movie} />;
+          })}
+        </FavoritesStyled>
+      )}
+    </>
+  );
 };

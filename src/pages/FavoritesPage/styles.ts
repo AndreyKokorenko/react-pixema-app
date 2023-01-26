@@ -4,13 +4,13 @@ import { screen } from "ui";
 const FavoritesStyled = styled.div`
   display: flex;
   justify-content: flex-start;
-  flex-wrap:wrap;
-  
-  padding-inline: 40px;
+  flex-wrap: wrap;
 
-${screen.SM} {
-  padding-inline: 0px;
-}
+  padding-inline: 40px;
+  
+  ${screen.SM} {
+    padding-inline: 0px;
+  }
 `;
 
 const FavoritesEmpty = styled.div`

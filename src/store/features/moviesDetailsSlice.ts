@@ -12,13 +12,13 @@ export const fetchMovieByDetails = createAsyncThunk<IMovieDetails, string>(
 
 interface IDetailsMovieState {
   isLoading: boolean;
-  error: null;
+  isError: null;
   details: IMovieDetails | null;
 }
 
 const initialState: IDetailsMovieState = {
   isLoading: false,
-  error: null,
+  isError: null,
   details: null,
 };
 
@@ -28,7 +28,7 @@ const movieDetailsSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder.addCase(fetchMovieByDetails.pending, (state) => {
-      state.error = null;
+      state.isError = null;
       state.isLoading = true;
     });
     builder.addCase(fetchMovieByDetails.fulfilled, (state, { payload }) => {
@@ -38,7 +38,7 @@ const movieDetailsSlice = createSlice({
     });
     builder.addCase(fetchMovieByDetails.rejected, (state) => {
       state.isLoading = false;
-      state.error = null;
+      state.isError = null;
     });
   },
 });

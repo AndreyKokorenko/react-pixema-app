@@ -20,10 +20,14 @@ import { Filters } from "./Filters/Filters";
 import { ColorMode } from "./ColorMode/ColorMode";
 import { ResetPasswordForm } from "./ResetPasswordForm/ResetPasswordForm";
 import { UpdateProfileForm } from "./UpdateProfileForm/UpdateProfileForm";
+import { TrendsList } from "./TrendsList/TrendsList";
+import { SettingsForm } from "./SettingsForm/SettingsForm";
 
 export type { SignInValues, SignUpValues };
 
 export {
+  SettingsForm,
+  TrendsList,
   ColorMode,
   ResetPasswordForm,
   UpdateProfileForm,

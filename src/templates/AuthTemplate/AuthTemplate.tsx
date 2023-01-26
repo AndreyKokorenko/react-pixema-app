@@ -14,6 +14,6 @@ export const AuthTemplate = () => {
       </StyledLink>
       <Outlet />
       <CopyRight>© All Rights Reserved</CopyRight>
-    </Container>
+	  </Container>
   );
 };

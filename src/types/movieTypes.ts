@@ -82,3 +82,7 @@ export enum Param {
   Search = "s",
   Page = "page",
 }
+export interface IOption {
+  value: string;
+  label: string;
+}

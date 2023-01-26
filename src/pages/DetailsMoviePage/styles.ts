@@ -1,25 +1,18 @@
-import { Color, screen, H1, H3, H2 } from "ui";
+import { Color, screen, H1, H3 } from "ui";
 import styled from "styled-components";
 import { TrendsIcon } from "assets";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   padding-inline: 40px;
-  width: 80%;
 
   ${screen.MD} {
     padding-inline: 30px;
-    margin: auto;
   }
+
   ${screen.SM} {
-    padding-inline: 0;
-    width: 100%;
-  }
-  ${screen.XS} {
-    padding-inline: 0;
-    width: 100%;
+    padding-inline: 0px;
   }
 `;
 
@@ -33,10 +26,8 @@ const MovieWrapper = styled.div`
 
 const ImgWrapper = styled.div`
   position: relative;
-
   display: flex;
   flex-direction: column;
-
   margin-right: 42px;
 
   ${screen.MD} {
@@ -46,17 +37,15 @@ const ImgWrapper = styled.div`
 `;
 
 const PosterImg = styled.img`
-  margin-bottom: 30px;
-
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 30px;
 `;
 
 const FavoritesButton = styled.button`
   background-color: rgba(255, 0, 0, 0);
   border: none;
   fill: ${Color.SECONDARY};
-
   cursor: pointer;
 
   :hover {
@@ -71,8 +60,6 @@ const DisFavoritesButton = styled(FavoritesButton)`
 const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
-  padding: 10px;
 `;
 
 const TypeMovie = styled.p`
@@ -85,14 +72,12 @@ const TitleMovie = styled(H1)`
 
 const Badges = styled.div`
   display: flex;
-
   margin-bottom: 40px;
 `;
 
 const BadgeIMDB = styled.div<{ $rating: number }>`
   padding: 8px;
   margin-right: 20px;
-
   background-color: ${({ $rating }) =>
     $rating > 7 ? `${Color.GREEN}` : $rating > 5 ? `${Color.YELLOW}` : `${Color.ORANGE}`};
   border-radius: 10px;
@@ -107,17 +92,14 @@ const Badge = styled.div`
 
 const Description = styled.p`
   margin-bottom: 40px;
-  max-width: 800px;
 `;
 
 const DataGrid = styled.div`
   display: grid;
+  font-size: 16px;
   grid-template-columns: 150px 1fr;
   grid-row-gap: 5px;
-
   margin-bottom: 40px;
-
-  font-size: 16px;
 `;
 
 const GridContains = styled.div`
@@ -133,10 +115,8 @@ const DataValue = styled.div``;
 const MovieButton = styled.div`
   display: flex;
   justify-content: space-around;
-
   padding: 20px;
   width: 100%;
-
   border-radius: 10px;
   background-color: ${Color.GRAPHITE};
 `;
@@ -149,11 +129,9 @@ const MovieTrendsIcon = styled(TrendsIcon)`
   position: absolute;
   left: 10px;
   top: 5px;
-
   height: 40px;
   width: 30px;
   padding: 5px;
-
   border-radius: 5px;
   fill: ${Color.WHITE};
   background-color: ${Color.PRIMARY};
@@ -163,7 +141,7 @@ const Error = styled(H3)`
   color: ${Color.ERROR};
 `;
 
-const Text = styled(H2)``;
+const Text = styled(H3)``;
 
 export {
   Text,

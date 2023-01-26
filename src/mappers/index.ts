@@ -1,3 +1,8 @@
-import { adaptedIMovie, adaptedIMovieSearch, adaptedIMovieDetails } from "./mappers";
+import {
+  adaptedIMovie,
+  adaptedIMovieSearch,
+  adaptedIMovieDetails,
+  transformShortMovie,
+} from "./mappers";
 
-export { adaptedIMovie, adaptedIMovieSearch, adaptedIMovieDetails };
+export { adaptedIMovie, adaptedIMovieSearch, adaptedIMovieDetails, transformShortMovie };

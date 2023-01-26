@@ -1,8 +1,16 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color } from "ui";
 
-const BurgerIcon = styled.div`
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const BurgerIcon = styled(motion.div)`
   grid-area: burger;
+
+  margin-left: 10px;
 
   cursor: pointer;
 `;
@@ -13,10 +21,9 @@ const Absolute = styled.div`
   left: 0;
 
   height: calc(100vh - 165px);
-  padding: 0px;
 `;
 
-const Backdround = styled.div`
+const Backdround = styled(motion.div)`
   height: calc(100vh - 130px);
 
   background-color: ${Color.BACKGROUND_PRIMARY};
@@ -39,4 +46,4 @@ const Wrapper = styled.div`
   color: ${Color.WHITE};
 `;
 
-export { BurgerIcon, Absolute, Wrapper, Backdround };
+export { BurgerIcon, Absolute, Wrapper, Backdround, Container };

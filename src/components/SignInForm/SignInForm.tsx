@@ -31,10 +31,17 @@ export const SignInForm = () => {
     defaultValues: { email: "", password: "" },
   });
 
+  const userInfo = JSON.parse(localStorage.getItem("userInfo")!);
+
+  if (userInfo) {
+    userInfo.isAuth = true;
+  }
+
   const onSubmit: SubmitHandler<SignInValues> = (userInfo) => {
     dispatch(fetchSignInUser(userInfo))
       .unwrap()
       .then(() => {
+        localStorage.length > 0 && localStorage.setItem("userInfo", JSON.stringify(userInfo));
         navigate(ROUTE.HOME);
       })
       .catch((err) => {

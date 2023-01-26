@@ -7,7 +7,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "store";
-import { IMovieSearch } from "types";
+import { IMovieSearch } from "types/movieTypes";
 import {
   Error,
   Wrapper,
@@ -17,13 +17,14 @@ import {
   FilterButton,
   Sticky,
 } from "./styles";
+import { motion, AnimatePresence } from "framer-motion";
 import { breakpoint } from "ui";
 import { useWindowSize } from "hooks";
 
 export const SearchPage = () => {
   const { width } = useWindowSize();
   const dispatch = useAppDispatch();
-  const { error, moviesSearch, params, movieArray } = useAppSelector(getMoviesSearch);
+  const { isError, moviesSearch, params, movieArray } = useAppSelector(getMoviesSearch);
 
   const [page, setPage] = useState(1);
   const [fetching, setFetching] = useState(true);
@@ -73,12 +74,20 @@ export const SearchPage = () => {
     }
   };
 
-  if (error) {
+  if (isError) {
     return (
       <>
         <ErrorWrapper>
           <ParamsList />
-          <Error>Ooopps! No results!</Error>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 2,
+            }}
+          >
+            <Error>Ooopps! No results!</Error>
+          </motion.div>
         </ErrorWrapper>
         <FilterContainer>
           {width && width > breakpoint.MD ? (
@@ -86,9 +95,21 @@ export const SearchPage = () => {
           ) : (
             <>
               <FilterButton onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? "Filters" : "Filters"}
+                {isOpen ? "Close filters" : "Open filters"}
               </FilterButton>
-              <Sticky>{isOpen && <Filters />}</Sticky>
+              <Sticky>
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ x: 50, y: -180, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 50, y: -180, opacity: 0 }}
+                    >
+                      <Filters />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Sticky>
             </>
           )}
         </FilterContainer>
@@ -121,9 +142,21 @@ export const SearchPage = () => {
         ) : (
           <>
             <FilterButton onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? "Filters" : "Filters"}
+              {isOpen ? "Close filters" : "Open filters"}
             </FilterButton>
-            <Sticky>{isOpen && <Filters />}</Sticky>
+            <Sticky>
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    initial={{ x: 50, y: -180, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: 50, y: -180, opacity: 0 }}
+                  >
+                    <Filters />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </Sticky>
           </>
         )}
       </FilterContainer>

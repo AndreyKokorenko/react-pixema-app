@@ -68,7 +68,7 @@ export const UpdateProfileForm = ({ toggleProfileOpen }: IProps) => {
           return <Input type={"text"} onChange={onChange} value={value} />;
         }}
       />
-      <Button type="submit"> Submit </Button>
+      <Button type="submit">Submit</Button>
       {errors.newEmail && <Error>{errors.newEmail.message}</Error>}
       {isOpen && <Modal toggleModal={toggleModal} message={errorMessage} />}
     </Form>

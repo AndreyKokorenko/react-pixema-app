@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -15,18 +15,18 @@ import { FirebaseError, FirebaseErrorCode } from "utils";
 
 interface IUserState {
   email: string;
-  isPendingAuth: boolean;
+  isLoading: boolean;
   error: null | FirebaseError;
   isAuth: boolean;
-  creationTime: string;
 }
 
+const userInfo = JSON.parse(localStorage.getItem("userInfo")!);
+
 const initialState: IUserState = {
-  email: "",
-  isPendingAuth: false,
+  email: userInfo && userInfo.email,
+  isLoading: false,
   error: null,
-  isAuth: false,
-  creationTime: "",
+  isAuth: userInfo && userInfo.isAuth,
 };
 
 export const fetchSignUpUser = createAsyncThunk<
@@ -127,84 +127,91 @@ export const updateUserPassword = createAsyncThunk<
 const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    getUserName: (state, { payload }: PayloadAction<string>) => {
+      state.email = payload;
+      localStorage.setItem("user", JSON.stringify(state));
+    },
+    getLogOutUser: (state) => {
+      state.isAuth = false;
+      localStorage.setItem("user", JSON.stringify(state));
+    },
+  },
   extraReducers(builder) {
     builder.addCase(fetchSignUpUser.pending, (state) => {
-      state.isPendingAuth = true;
+      state.isLoading = true;
       state.isAuth = false;
       state.error = null;
     });
     builder.addCase(fetchSignUpUser.fulfilled, (state, { payload }) => {
-      state.isPendingAuth = false;
+      state.isLoading = false;
       state.error = null;
       state.email = payload.userEmail;
-      state.creationTime = payload.creationTime;
       state.isAuth = true;
     });
     builder.addCase(fetchSignUpUser.rejected, (state, { payload }) => {
       if (payload) {
-        state.isPendingAuth = false;
+        state.isLoading = false;
         state.error = payload;
         state.isAuth = false;
       }
     });
     builder.addCase(fetchSignInUser.pending, (state) => {
-      state.isPendingAuth = true;
+      state.isLoading = true;
       state.isAuth = false;
       state.error = null;
     });
     builder.addCase(fetchSignInUser.fulfilled, (state, { payload }) => {
-      state.isPendingAuth = false;
+      state.isLoading = false;
       state.error = null;
       state.email = payload.userEmail;
-      state.creationTime = payload.creationTime;
       state.isAuth = true;
     });
     builder.addCase(fetchSignInUser.rejected, (state, { payload }) => {
       if (payload) {
-        state.isPendingAuth = false;
+        state.isLoading = false;
         state.error = payload;
         state.isAuth = false;
       }
     });
     builder.addCase(resetPassword.pending, (state) => {
-      state.isPendingAuth = true;
+      state.isLoading = true;
       state.error = null;
     });
     builder.addCase(resetPassword.fulfilled, (state) => {
-      state.isPendingAuth = false;
+      state.isLoading = false;
       state.error = null;
     });
     builder.addCase(resetPassword.rejected, (state, { payload }) => {
       if (payload) {
-        state.isPendingAuth = false;
+        state.isLoading = false;
       }
     });
     builder.addCase(updateUserPassword.pending, (state) => {
-      state.isPendingAuth = true;
+      state.isLoading = true;
       state.error = null;
     });
     builder.addCase(updateUserPassword.fulfilled, (state) => {
-      state.isPendingAuth = false;
+      state.isLoading = false;
       state.error = null;
     });
     builder.addCase(updateUserPassword.rejected, (state, { payload }) => {
       if (payload) {
-        state.isPendingAuth = false;
+        state.isLoading = false;
       }
     });
     builder.addCase(updateUserEmail.pending, (state) => {
-      state.isPendingAuth = true;
+      state.isLoading = true;
       state.error = null;
     });
     builder.addCase(updateUserEmail.fulfilled, (state, { payload }) => {
-      state.isPendingAuth = false;
+      state.isLoading = false;
       state.email = payload.userEmail;
       state.error = null;
     });
     builder.addCase(updateUserEmail.rejected, (state, { payload }) => {
       if (payload) {
-        state.isPendingAuth = false;
+        state.isLoading = false;
       }
     });
   },

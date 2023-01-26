@@ -1,4 +1,4 @@
-import { MainMovies } from "components";
+import { Loading, MainMovies } from "components";
 import { useEffect, useState } from "react";
 import { fetchMovies, useAppDispatch, useAppSelector, getMovies } from "store";
 import { StyledList, Error, CategoryList, Title } from "./styles";
@@ -23,7 +23,7 @@ export const HomePage = () => {
   const [fetching, setFetching] = useState(true);
 
   const dispatch = useAppDispatch();
-  const { error, movies } = useAppSelector(getMovies);
+  const { isError, movies, isLoading } = useAppSelector(getMovies);
 
   useEffect(() => {
     if (fetching) {
@@ -55,7 +55,11 @@ export const HomePage = () => {
     }
   };
 
-  if (error) {
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (isError) {
     return <Error> Sorry :( </Error>;
   }
 
