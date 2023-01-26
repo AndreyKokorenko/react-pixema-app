@@ -5,6 +5,7 @@ const MovieList = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
+  width: calc(100vw - 350px);
   padding-bottom: 10px;
 
   ${screen.MD} {
