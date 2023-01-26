@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-pixema-app/static/css/main.b375a7be.css",
-    "main.js": "/react-pixema-app/static/js/main.fa5248a0.js",
+    "main.js": "/react-pixema-app/static/js/main.cc83c169.js",
     "static/media/authBackground.jpg": "/react-pixema-app/static/media/authBackground.1c307d0b55bb182bf805.jpg",
     "static/media/emptyFavorites.svg": "/react-pixema-app/static/media/emptyFavorites.8fda07dcb1b4988a9818a18b200ee966.svg",
     "static/media/pixemalogo.svg": "/react-pixema-app/static/media/pixemalogo.8479cf418db81b4ccbd2d64f9b11aa24.svg",
@@ -17,10 +17,10 @@
     "static/media/share.svg": "/react-pixema-app/static/media/share.242b526d1cb1ef7d8221dbd0f66122b9.svg",
     "static/media/delete.svg": "/react-pixema-app/static/media/delete.2b6143344da6e0aaab82faf876c17b38.svg",
     "main.b375a7be.css.map": "/react-pixema-app/static/css/main.b375a7be.css.map",
-    "main.fa5248a0.js.map": "/react-pixema-app/static/js/main.fa5248a0.js.map"
+    "main.cc83c169.js.map": "/react-pixema-app/static/js/main.cc83c169.js.map"
   },
   "entrypoints": [
     "static/css/main.b375a7be.css",
-    "static/js/main.fa5248a0.js"
+    "static/js/main.cc83c169.js"
   ]
 }
