@@ -91,6 +91,7 @@ const Badge = styled.div`
 `;
 
 const Description = styled.p`
+  max-width: 40%;
   margin-bottom: 40px;
 `;
 
