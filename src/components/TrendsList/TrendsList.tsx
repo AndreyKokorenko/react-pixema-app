@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Loading, MovieTile } from "components";
+import { MovieTile } from "components";
 import { fetchTrends } from "store/features/";
 import { useAppDispatch, useAppSelector } from "store";
 import { getTrends } from "store/selectors";
