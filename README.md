@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-	 <img src="./readme/7.png" alt="Logo" width="200" height="200">
+	 <img src="./readme/7.png" alt="Logo">
   </a>
 
   <h3 align="center">Pixema app</h3>
